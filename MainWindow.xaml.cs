@@ -28,17 +28,18 @@ namespace SshTool
             {
                 byte[] bytes = File.ReadAllBytes("config");
                 string[] info = System.Text.Encoding.Default.GetString(bytes).Split('\n');
-                Console.WriteLine(info.Length);
+                // Console.WriteLine(info.Length);
                 if (info.Length > 1)
                 {
                     // MsgAppend("已读取配置");
+                    Console.WriteLine(info[0]);
                     last_selected = int.Parse(info[0]);
                     configs = new Config[info.Length - 1];
                     for(int i = 1; i < info.Length; i++)
                     {
                         // Console.WriteLine("ID: " + i + " MSG:" + info[i]);
                         string[] items = info[i].Split('\t');
-                        Console.WriteLine(info[i]);
+                        // Console.WriteLine(info[i]);
                         if (items.Length == 7)
                         {
                             configs[i-1] = new Config(i-1, items[0], items[1], items[2], items[3], items[4], items[5], items[6]);
@@ -270,10 +271,6 @@ namespace SshTool
 
         void NewConfigFromInput()
         {
-            if (null == config_label.Text || config_label.Text.Equals(""))
-            {
-                config_label.Text = "undefined";
-            }
             var host = ssh_host.Text.Trim();
             var label = config_label.Text.Trim();
             var ssh_u = ssh_user.Text.Trim();
@@ -281,7 +278,7 @@ namespace SshTool
             var pwd = ssh_password.Text.Trim();
             var app_p = app_port.Text.Trim();
             var local_p = local_port.Text.Trim();
-            if (IsEmpty(host) || IsEmpty(label) || IsEmpty(ssh_p) || IsEmpty(pwd) || IsEmpty(app_p) || IsEmpty(local_p))
+            if (IsEmpty(host) || IsEmpty(label) || IsEmpty(label) || IsEmpty(ssh_u) || IsEmpty(pwd) || IsEmpty(app_p) || IsEmpty(local_p))
             {
                 MessageBox.Show("所有参数均为必填项");
                 return;
