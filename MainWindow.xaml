@@ -7,33 +7,40 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         ShowInTaskbar="True"
-        Title="SshTool V1.0.1   --By icecoins" 
-        Height="800" Width="1200" 
+        Title="SshTool V1.0.2   --By icecoins" 
+        Height="900" Width="1200" 
         Background="#FFE2FF96" 
         BorderBrush="White" 
         Cursor="Pen" 
         AllowDrop="True" Foreground="White" OpacityMask="White" ResizeMode="CanMinimize" Icon="ic.ico" FontFamily="Arial" FontSize="20" Visibility="Visible" BorderThickness="0" WindowStyle="ThreeDBorderWindow">
-    <Grid Background="#FFBCE4A5" Width="1200" Height="800">
+    <Grid Background="#FFBCE4A5" Width="1200" Margin="0,0,-6,1" Height="870">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition Width="599*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="ssh_host" HorizontalAlignment="Left" Height="40" Margin="400,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="app_port" HorizontalAlignment="Left" Height="40" Margin="400,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" FontSize="18" FontWeight="Bold"/>
-        <Label Content="服务器地址" HorizontalAlignment="Left" Margin="150,60,0,0" VerticalAlignment="Top" Height="40" Width="250" FontSize="20" FontWeight="Bold"/>
-        <Label Content="服务器应用运行端口" HorizontalAlignment="Left" Margin="151.355,300,0,0" VerticalAlignment="Top" Height="40" Width="250" FontSize="20" RenderTransformOrigin="0.231,0.481" FontWeight="Bold"/>
-        <TextBox x:Name="local_port" HorizontalAlignment="Left" Height="40" Margin="400,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" RenderTransformOrigin="0.45,0.778" FontSize="18" SpellCheck.IsEnabled="True" FontWeight="Bold"/>
-        <Label Content="本地浏览端口" HorizontalAlignment="Left" Margin="151.355,360,0,0" VerticalAlignment="Top" Height="40" Width="250" RenderTransformOrigin="0.446,2.115" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="connect" Content="连接" HorizontalAlignment="Left" Margin="150,0,0,45" Width="200" Click="Connect_Click" FontSize="18" Background="#FF6BCCF9" FontWeight="Bold" Height="70" VerticalAlignment="Bottom" RenderTransformOrigin="0.544,0.7"/>
-        <TextBox x:Name="ssh_password" HorizontalAlignment="Left" Height="40" Margin="400,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" RenderTransformOrigin="0.45,0.778" FontSize="18" FontWeight="Bold"/>
-        <Label Content="ssh密码" HorizontalAlignment="Left" Margin="150,240,0,0" VerticalAlignment="Top" Height="40" Width="250" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold"/>
-        <TextBox x:Name="ssh_port" HorizontalAlignment="Left" Height="40" Margin="400,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" RenderTransformOrigin="0.45,0.778" FontSize="20" FontWeight="Bold"/>
-        <Label Content="ssh端口" HorizontalAlignment="Left" Margin="151.355,180,0,0" VerticalAlignment="Top" Height="40" Width="250" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold"/>
-        <TextBox x:Name="ssh_user" HorizontalAlignment="Left" Height="40" Margin="400,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="650" RenderTransformOrigin="0.45,0.778" FontSize="18" FontWeight="Bold"/>
-        <Label Content="ssh用户名" HorizontalAlignment="Left" Margin="151.355,120,0,0" VerticalAlignment="Top" Height="40" Width="248.645" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold"/>
-        <TextBox x:Name="info" HorizontalAlignment="Left" Height="250" Margin="300,420,0,0" TextWrapping="Wrap" Text="版本：V1.0.1。&#xD;&#xA;关注作者，持续更新。&#xA;&#xA;输出信息：" VerticalAlignment="Top" Width="750" RenderTransformOrigin="0.45,0.778" FontSize="16" Background="#FFA9E8FF" FontWeight="Bold" AcceptsReturn="True"/>
-        <Label Content="输出信息" HorizontalAlignment="Left" Margin="151,420,0,0" VerticalAlignment="Top" Height="40" Width="144" RenderTransformOrigin="0.446,2.115" FontSize="20" FontWeight="Bold"/>
-        <Button x:Name="disconnect" Content="断开" HorizontalAlignment="Left" Margin="500,685,0,0" VerticalAlignment="Top" Width="200" Height="70" Click="Disconnect_Click" FontSize="18" Background="#FFEC967D" FontWeight="Bold" RenderTransformOrigin="0.364,1.209" IsEnabled="False"/>
-        <Button x:Name="exit" Content="退出" HorizontalAlignment="Left" Margin="850,685,0,0" VerticalAlignment="Top" Width="200" Height="70" Click="Exit_Click" FontSize="18" Background="#FFC3AEAE" ClipToBounds="True" FontWeight="Bold"/>
+        <TextBox x:Name="ssh_host" HorizontalAlignment="Left" Height="40" Margin="348,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" FontSize="20" FontWeight="Bold" ToolTip="如：region-9.seetacloud.com、connect.westa.seetacloud.com，可从平台实例处获取" Grid.Column="1"/>
+        <TextBox x:Name="app_port" HorizontalAlignment="Left" Height="40" Margin="348,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" FontSize="18" FontWeight="Bold" ToolTip="如：6006、8080，可从实例启动命令行处获取" Grid.Column="1"/>
+        <Label Content="服务器地址" HorizontalAlignment="Left" Margin="148,150,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="服务器应用运行端口" HorizontalAlignment="Left" Margin="148,390,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" RenderTransformOrigin="0.231,0.481" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="local_port" HorizontalAlignment="Left" Height="40" Margin="348,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" RenderTransformOrigin="0.45,0.778" FontSize="18" SpellCheck.IsEnabled="True" FontWeight="Bold" ToolTip="如：22222、12345，自定义即可" Grid.Column="1"/>
+        <Label Content="本地浏览端口" HorizontalAlignment="Left" Margin="148,450,0,0" VerticalAlignment="Top" Height="40" Width="200" RenderTransformOrigin="0.446,2.115" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="connect" Content="连接" HorizontalAlignment="Left" Margin="148,765,0,35" Width="200" Click="Connect_Click" FontSize="18" Background="#FF6BCCF9" FontWeight="Bold" Height="70" VerticalAlignment="Center" RenderTransformOrigin="0.544,0.7" Grid.Column="1"/>
+        <TextBox x:Name="ssh_password" HorizontalAlignment="Left" Height="40" Margin="348,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" RenderTransformOrigin="0.45,0.778" FontSize="18" FontWeight="Bold" ToolTip="如：PGmmGr3IfC，可从平台实例处获取" Grid.Column="1"/>
+        <Label Content="ssh密码" HorizontalAlignment="Left" Margin="148,330,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="ssh_port" HorizontalAlignment="Left" Height="40" Margin="348,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" RenderTransformOrigin="0.45,0.778" FontSize="20" FontWeight="Bold" ToolTip="如：22、39350、15883，可从平台实例处获取" Grid.Column="1"/>
+        <Label Content="ssh端口" HorizontalAlignment="Left" Margin="148,270,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="ssh_user" HorizontalAlignment="Left" Height="40" Margin="348,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" RenderTransformOrigin="0.45,0.778" FontSize="18" FontWeight="Bold" ToolTip="如：root" Grid.Column="1"/>
+        <Label Content="ssh用户名" HorizontalAlignment="Left" Margin="148,210,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" RenderTransformOrigin="0.531,0.333" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="info" HorizontalAlignment="Left" Height="250" Margin="298,510,0,0" TextWrapping="Wrap" Text="版本：V1.0.2。&#xA;关注作者，持续更新。&#xA;&#xA;输出信息：" VerticalAlignment="Top" Width="750" RenderTransformOrigin="0.45,0.778" FontSize="16" Background="#FFA9E8FF" FontWeight="Bold" AcceptsReturn="True" ToolTip="显示输出信息，也可以作为记事本，可随意更改" Grid.Column="1"/>
+        <Label Content="输出信息" HorizontalAlignment="Left" Margin="148,510,0,0" VerticalAlignment="Top" Height="40" Width="144" RenderTransformOrigin="0.446,2.115" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="disconnect" Content="断开" HorizontalAlignment="Left" Margin="498,765,0,35" VerticalAlignment="Center" Width="200" Height="70" Click="Disconnect_Click" FontSize="18" Background="#FFEC967D" FontWeight="Bold" RenderTransformOrigin="0.364,1.209" IsEnabled="False" Grid.Column="1"/>
+        <Button x:Name="exit" Content="退出" HorizontalAlignment="Left" Margin="848,766,0,34" VerticalAlignment="Center" Width="200" Height="70" Click="Exit_Click" FontSize="18" Background="#FFC3AEAE" ClipToBounds="True" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="配置信息" HorizontalAlignment="Left" Margin="148,30,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <ComboBox x:Name="config_info" HorizontalAlignment="Left" Margin="348,30,0,0" VerticalAlignment="Top" Width="500" Height="40" IsReadOnly="True" Grid.Column="1"/>
+        <Button x:Name="create_config" Content="新增" HorizontalAlignment="Left" Margin="854,30,0,0" VerticalAlignment="Top" Width="94" Height="40" Click="Create_Click" RenderTransformOrigin="0.188,0.662" ToolTip="把当前填写的配置记录至文件中" Grid.Column="1"/>
+        <TextBox x:Name="config_label" HorizontalAlignment="Left" Height="40" Margin="348,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="700" FontSize="20" FontWeight="Bold" TextDecorations="{x:Null}" ToolTip="当前配置名称" Grid.Column="1"/>
+        <Label Content="配置名称" HorizontalAlignment="Left" Margin="148,90,0,0" VerticalAlignment="Top" Height="40" Width="200" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="del_config" Content="删除" HorizontalAlignment="Left" Margin="954,30,0,0" VerticalAlignment="Top" Width="94" Height="40" Click="Del_Click" RenderTransformOrigin="0.188,0.662" ToolTip="把当前选中的配置从文件中删除" Grid.Column="1"/>
 
     </Grid>
 </Window>
